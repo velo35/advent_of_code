@@ -1,7 +1,7 @@
 const source = "http://127.0.0.1:8080/2021/day_5/input"
 const input_file = 1 ? "real.txt" : "sample.txt"
 
-function task_1(input, task)
+function task(input, task_id)
 {
     const grid = {}
 
@@ -26,7 +26,7 @@ function task_1(input, task)
             const pos = `${x1},${y0}`
             grid[pos] = grid[pos] ? grid[pos] + 1 : 1
         }
-        else if (task == 2) {
+        else if (task_id == 2) {
             const dx = x1 > x0 ? 1 : -1
             const dy = y1 > y0 ? 1 : -1
 
@@ -45,8 +45,8 @@ function task_1(input, task)
 
 function solve(input)
 {
-    console.log("task1:", task_1(input, 1))
-    console.log("task2:", task_1(input, 2))
+    console.log("task1:", task(input, 1))
+    console.log("task2:", task(input, 2))
 }
 
 fetch(source + "/" + input_file)
